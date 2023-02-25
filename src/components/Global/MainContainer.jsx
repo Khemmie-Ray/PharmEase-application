@@ -8,7 +8,6 @@ import SideBar from "./SideBar";
 import Login from "../Start/Login";
 import SignUp from "../Start/SignUp";
 
-// import ProtectedRoute from './ProtectedRoute';
 
 
 const MainContainer = () => {
@@ -32,7 +31,7 @@ const MainContainer = () => {
               <div className="wrapper">
                 <SideBar isOpen={isOpen} />
                 <div className={`content ${isOpen ? 'shifted' : ''}`}>
-                  <Dashboard authenticated={authenticated} />
+                  <Dashboard />
                 </div>
               </div>
             </>

@@ -42,52 +42,7 @@ const SideBar = ({isOpen}) => {
             </div>
           ))
         }
-          {/* <li className="sidebar-menu-item">
-            <p style={{color: "#173C96"}}>{isOpen && <span className="sidebar__text" style={{marginBlockEnd: "32px"}}>Navigation</span>}</p>
-            <a href="#" className="sidebar-menu-link">
-              <FaThList style={{marginRight:"12px", fontSize:"17px"}}/>{isOpen && <span className="sidebar__text">Dashboard</span>}
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a href="#" className="sidebar-menu-link">
-             <HiUserGroup style={{marginRight:"12px", fontSize:"17px"}}/> {isOpen && <span className="sidebar__text">Customers</span>}
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a href="#" className="sidebar-menu-link">
-              <BiGroup style={{marginRight:"12px", fontSize:"17px"}}/> {isOpen && <span className="sidebar__text">Suppliers</span>}
-            </a>
-          </li>          
-          <li className="sidebar-menu-item">
-            <a href="#" className="sidebar-menu-link">
-              <GiMedicines style={{marginRight:"12px", fontSize:"17px"}}/> {isOpen && <span className="sidebar__text">Products</span>}
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a href="#" className="sidebar-menu-link">
-              <BsStack style={{marginRight:"12px", fontSize:"17px"}}/>{isOpen && <span className="sidebar__text">Stock</span>}
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a href="#" className="sidebar-menu-link">
-              <HiShoppingCart style={{marginRight:"12px", fontSize:"17px"}}/>{isOpen && <span className="sidebar__text">Orders</span>}
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a href="#" className="sidebar-menu-link">
-              <FaIdCard style={{marginRight:"12px", fontSize:"17px"}}/>{isOpen && <span className="sidebar__text">Employee</span>}
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a href="#" className="sidebar-menu-link">
-              <MdOutlineInventory style={{marginRight:"12px", fontSize:"17px"}}/>{isOpen && <span className="sidebar__text">Inventory</span>}
-            </a>
-          </li>
-          <li className="sidebar-menu-item">
-            <a href="#" className="sidebar-menu-link">
-              <BsGearFill style={{marginRight:"12px", fontSize:"17px"}}/>{isOpen && <span className="sidebar__text">Settings</span>}
-            </a>
-          </li> */}
+ 
         </> 
     </div>
       </aside>
