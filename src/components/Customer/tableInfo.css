@@ -1,0 +1,101 @@
+td, th {
+    border: 1px solid gray;
+    padding: 1em;
+}
+
+.clients {
+    border-collapse: collapse;
+}
+
+#customer, #supplier,
+#employee {
+    background-color: white;
+    width: 95%;
+    padding: 1em 2em;
+    border-radius: 10px;
+    margin: auto;
+}
+
+table {
+    margin-top: 2em;
+    width: 100%;
+}
+
+.newClients input {
+    display: block;
+    padding: .5em;
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.newClients {
+    width: 25%;
+    padding: 1em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #E3E4E7;
+}
+
+.newData {
+    display: flex;
+    justify-content: space-between;
+}
+
+.newClients, .addNew,
+.newData input, .save  {
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.addNew, .save {
+    background-color: rgb(13, 13, 157);
+    color: var(--primary-color);
+    border: 0;
+    padding: .6em 1.5em;
+    margin-bottom: 1em;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card {
+    width: 31%;
+    background-color: #d9d9d9;
+    margin-bottom: 1.5em;
+    padding: 1em;
+    box-shadow: 2px 2px 4px grey;
+}
+
+.card img {
+    width: 50%;
+    height: 180px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.role-name {
+    text-transform: capitalize;
+}
+
+label {
+    display: block;
+}
