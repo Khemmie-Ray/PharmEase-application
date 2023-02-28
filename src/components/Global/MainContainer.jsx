@@ -7,6 +7,7 @@ import Stock from "../Stock/Stock";
 import Customer from "../Customer/Customer";
 import Suppliers from "../Customer/Suppliers";
 import Employee from "../Employee/Employee";
+import Pos from "../Point-of-sale/Pos";
 import Navbar from "./NavBar";
 import SideBar from "./SideBar";
 import Login from "../Start/Login";
@@ -102,6 +103,20 @@ const MainContainer = () => {
                 <SideBar isOpen={isOpen} />
                 <div className={`content ${isOpen ? 'shifted' : ''}`}>
                   <Employee />
+                </div>
+              </div>
+            </>
+          }
+        />  
+
+        <Route path="/point of sale"
+          element={
+            <>
+              <Navbar toggle={toggle} />
+              <div className="wrapper">
+                <SideBar isOpen={isOpen} />
+                <div className={`content ${isOpen ? 'shifted' : ''}`}>
+                  <Pos />
                 </div>
               </div>
             </>
