@@ -1,26 +1,88 @@
+import { useState } from "react"
 import TitleBar from "../Global/TitleBar"
-import { useState, useEffect } from "react"
+import employeedata from './employeedata'
+import Card from "./Card"
 
 const Employee = () => {
-    // const [userImage, setUserImage] = useState([])
-    // const [currentImage, setcurrentImage] = useState('')
-    //     const roles = ["Operation Manager", "I.T Specialist", "Sales Rep", "Pharmacist"]
+  const [currentImage, setcurrentImage] = useState('')
+  // const [employeeInfo, setEmployeeInfo] = useState(employeedata)
+  // console.log(employeeInfo)
 
-    useEffect(() => {
-        fetch('https://api.unsplash.com/search/photos?query=doctor-profile&per_page=6&client_id=RCPdqXnOWsf2C1dFCQlPSmsfwMREmSW-wrETwp7i-qU', {
-            cache: "force-cache"
-        })
-        .then(res => res.json())
-        .then(data => console.log(data.results))
-    }, []) 
+  // const handleEmployeeAdd = () => {
+  //   setEmployeeInfo((prevData) => [
+  //     ...prevData,
+  //     { id: prevData.length + 1, ...newData },
+  //   ]);
+  //   setNewData({ imageUrl: '',firstname: '',lastname: '',role: '', email: '', phone: '',  mobile: '', fax: '' });
+  // };
+
+    const profile = employeedata.map(info => <Card key={info.id} info={info} handleCurrentImage={handleCurrentImage}/> )
+    console.log(currentImage)
+
+    function handleCurrentImage(img) {
+      setcurrentImage(prev => img) 
+   }
 
   return (
-    <div>
+    <>
          <TitleBar title="Employee" icon="FaIdCard" />
-        <div className="container" id="employee">
-        
+         <div className="container" id="employee">
+         <div className="newData">
+            <h2>Employee</h2>
+        <button className="addNew">Add employee</button>
         </div>
+          {!currentImage ? ( <div className="card-content">
+        {profile}
+        </div>) : (
+        <div className="profileCard">
+          <div className="banner">
+            <div className="banner-img">
+            <img src={currentImage.imageUrl} alt="" />
+            </div>
+            <div className="employeeName">
+              <h5>{currentImage.firstname} {currentImage.lastname}</h5>
+              <p>{currentImage.role}</p>
+            </div>
+            </div>
+            <div className="dataTag">
+              <div className="labelTag">
+              <p>First Name</p>
+            <p>Last Name</p>
+          </div>
+          <div className="infoTag">
+            <p>{currentImage.firstname}</p>
+            <p>{currentImage.lastname}</p>
+          </div>
+            <p>Job Title</p>
+              <p className="roleTitle">{currentImage.role}</p>
+              <div>
+                <div className="labelTag">
+              <p>Email Address</p>
+              <p>Phone</p>
+              </div>
+            <div className="infoTag">
+              <p>{currentImage.email}</p>
+              <p>{currentImage.phone}</p>
+            </div>   
+            </div>
+            <div>
+              <div className="labelTag">
+              <p>Mobile</p>
+              <p>Fax</p>
+              </div>
+              <div className="infoTag">
+                <p>{currentImage.mobile}</p>
+                <p>{currentImage.fax}</p>
+              </div>
+            </div>
+            <div className="profileBtn">
+              <button className="addNew userBtn">Remove Employee</button>
+              <button className="addNew userBtn">Edit Profile</button>
+            </div>
+          </div>
+        </div>)}
     </div>
+    </>
   )
 }
 
