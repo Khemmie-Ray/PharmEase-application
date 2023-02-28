@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
 import './NavBar.css';
 import Product from "../Product/Product";
-import Stock from "../Stock/Stock";
 import Navbar from "./NavBar";
 import SideBar from "./SideBar";
 import Login from "../Start/Login";
@@ -46,19 +45,6 @@ const MainContainer = () => {
                 <SideBar isOpen={isOpen} />
                 <div className={`content ${isOpen ? 'shifted' : ''}`}>
                   <Product />
-                </div>
-              </div>
-            </>
-          }
-        />
-        <Route path="/stock"
-          element={
-            <>
-              <Navbar toggle={toggle} />
-              <div className="wrapper">
-                <SideBar isOpen={isOpen} />
-                <div className={`content ${isOpen ? 'shifted' : ''}`}>
-                  <Stock />
                 </div>
               </div>
             </>
