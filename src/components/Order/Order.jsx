@@ -1,65 +1,88 @@
-import { useState, useRef } from "react";
-import { FormControl, InputGroup, Table } from "react-bootstrap";
-import { BsSearch } from 'react-icons/bs';
+import { useState} from 'react';
+import { Table } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import { productsData } from './data';
+import Pagination from '../Global/Pagination';
+import Badge from 'react-bootstrap/Badge';
+import {productsData} from "../Product/data";
+import TitleBar from '../Global/TitleBar';
 
-import TitleBar from "../Global/TitleBar";
-import { productsData } from "../Product/data";
 
-const Order = ({ data = productsData }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+const Order = ({ products = productsData }) => {  
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredProducts, setFilteredProducts] = useState(products);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(10);
 
-  const filteredData = data.filter((item) => {
-    return (
-      item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.quantity.toString().includes(searchTerm.toLowerCase()) ||
-      item.price.toString().includes(searchTerm.toLowerCase())
-    );
-  });
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+        const searchResults = products.filter((product) => {
+          return product.name
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase());
+        });
+        setFilteredProducts(searchResults);
+      };
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
- 
+  //   Logic to display current products
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
   return (
     <div>
-      <TitleBar title="Order" icon="BsStack"/>
-      <div className="bg-white p-4" style={{width:"90%", margin:"auto"}}>
-      <div className="d-flex justify-content-between align-items-center">
-              
-         <InputGroup className="mb-3 w-25">
-          <InputGroup.Text>
-            <BsSearch />
-          </InputGroup.Text>
-          <FormControl
-            placeholder="Search"
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </InputGroup>
-        </div>
-        
-       
-        <div >
-          <Table hover bordered responsive="sm md lg xl" id="stock-table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Quantity</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredData.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.name}</td>
-                  <td>{item.category}</td>
-                  <td>{item.quantity}</td>
-                  <td>{item.price}</td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </div>
+        <TitleBar title="Order" icon="BsFillCartCheckFill"/>
+        <div className="bg-white p-4" style={{width:"90%", margin:"auto"}}>
+      <div className="d-flex justify-content-between align-items-center mb-4">
+
+        <input
+          type="text"
+          placeholder="Search "
+          value={searchTerm}
+          onChange={handleSearch}
+        />
       </div>
+      <Table bordered hover responsive="sm md lg xl">
+        <thead>
+          <tr>
+            <th>S/N</th>
+            <th>Product Name</th>
+            <th>Batch No</th>
+            <th>Quantity</th>
+            <th>Price Per Unit</th>
+            <th>Expiry Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {currentProducts.map((product, index) => (
+            <tr key={product.id}>
+              <td>{index + 1 + (currentPage - 1) * productsPerPage}</td>
+              <td>{product.name}</td>
+              <td>{product.batch}</td>
+              <td>{product.quantity}</td>
+              <td>{product.price}</td>
+              <td>{product.expiry}</td>
+              <td><Badge className={product.status === "In Stock" ? "pill bg-success text-white" : "pill bg-danger text-white"}>
+                {product.status}
+              </Badge></td>
+
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+      <Pagination
+        productsPerPage={productsPerPage}
+        totalProducts={filteredProducts.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      /></div>
     </div>
   );
 };
-export default Order;
+
+export default Order;;
