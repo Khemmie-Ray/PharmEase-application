@@ -2,7 +2,7 @@
     --bs-gutter-x: 2.5rem;
     --bs-gutter-y: 0;
     width: 100%;
-    padding-right: 80px;
+    /* padding-right: 80px; */
     /* padding-left: calc(var(--bs-gutter-x) * .5); */
     /* margin: auto; */
 }
