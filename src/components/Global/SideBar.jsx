@@ -28,14 +28,14 @@ const SideBar = ({isOpen}) => {
                   <NavLink 
                   to={`/${link.name}`}
                   key={link.name}
-                  className="sidebar-menu-link"
+                  
                   activeClassName="sidebar__link--active"
                   >
-                    <>
-                    <div style={{marginRight:"12px", fontSize:"17px"}}>{link.icon}</div>
-                    {isOpen && <span className="sidebar__text">{link.name}</span>
+                    <div className="sidebar-menu-link">
+                    <div style={{fontSize:"17px"}}>{link.icon}</div>
+                    {isOpen && <span className="sidebar__text" >{link.name}</span>
                     }
-                    </>
+                    </div>
                   </NavLink>
                 ))
               }

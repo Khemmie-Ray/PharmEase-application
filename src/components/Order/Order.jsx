@@ -1,9 +1,9 @@
 import { useState} from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Button, Badge } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { productsData } from './data';
 import Pagination from '../Global/Pagination';
-import Badge from 'react-bootstrap/Badge';
+// import Badge from 'react-bootstrap/Badge';
 import {productsData} from "../Product/data";
 import TitleBar from '../Global/TitleBar';
 
@@ -50,7 +50,7 @@ const Order = ({ products = productsData }) => {
         <thead>
           <tr>
             <th>S/N</th>
-            <th>Product Name</th>
+            <th>Customer's Name</th>
             <th>Batch No</th>
             <th>Quantity</th>
             <th>Price Per Unit</th>
@@ -62,15 +62,16 @@ const Order = ({ products = productsData }) => {
           {currentProducts.map((product, index) => (
             <tr key={product.id}>
               <td>{index + 1 + (currentPage - 1) * productsPerPage}</td>
-              <td>{product.name}</td>
+              <td>{product.customer}</td>
               <td>{product.batch}</td>
               <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td>{product.expiry}</td>
-              <td><Badge className={product.status === "In Stock" ? "pill bg-success text-white" : "pill bg-danger text-white"}>
-                {product.status}
-              </Badge></td>
-
+              <td>{product.order === "Delivered" && (<Button style={{padding:"1px", fontSize:"12px"}} variant ="success">{product.order}</Button>)}
+              {product.order === "Pending" && (<Button style={{padding:"1px", fontSize:"12px"}}variant = "warning">{product.order}</Button>)}
+              {product.order === "Cancelled" && (<Button style={{padding:"1px", fontSize:"12px"}} variant ="danger">{product.order}</Button>)}
+              {product.order === "Shipped" && (<Button style={{padding:"1px", fontSize:"12px"}} variant ="warning">{product.order}</Button>)}
+              </td>
             </tr>
           ))}
         </tbody>
