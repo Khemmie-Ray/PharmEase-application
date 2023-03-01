@@ -4,13 +4,6 @@
     justify-content: space-between;
 }
 
-@media screen and (max-width: 600px){
-    .overview-cards{
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 
 .overview-card{
     width: 22%;
@@ -21,28 +14,7 @@
     margin-block-end: 32px;
     padding: 15px 13px 17px;
 }
-@media screen and (max-width: 600px){
-    .overview-card{
-        width: 100%;
-        height: 100%;
-        margin-bottom: 20px;
-    }
-}
-@media screen and (max-width: 900px){
-    .overview-cards{
-        flex-wrap: wrap;
-    }
-    .overview-card{
-        width: 45%;
-        height: 100%;
-        margin-bottom: 10px;
-    }
-    .overview-card-content{
-        flex-direction: column;
-        text-align: center;
-    }
-    
-}
+
 .overview-card-content {
     width: 100%;
     display: flex;

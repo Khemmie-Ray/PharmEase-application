@@ -6,14 +6,7 @@
     margin: 0 auto;
  }
 
- @media screen and (max-width: 900px){
-    .dashboard-container{
-        width: 92%;
-        margin-inline-start: 25px;
-        
-    }
-    
-}
+
 .mid-cards {
     display: flex;
     justify-content: space-between;
@@ -21,11 +14,7 @@
     margin-block-end: 32px;
 }
 
-@media (max-width: 600px) {
-    .mid-cards {
-        flex-direction: column;
-        }
-}
+
 
 .graph {
     width: 50%;
@@ -46,23 +35,7 @@
     height: 380px;
     overflow-y: hidden;
 }
-/* @media (max-width: 600px) {
-} */
-@media (max-width: 600px) {
-    .graph, .orders {
-        width: 100%;
-        margin-bottom: 20px;
-        height: 250px;       
-    } 
-}
-@media screen and (max-width:900px){
-  .graph,.orders {
-        /* width: 90%; */
-        /* margin-bottom: 20px; */
-        height: 300px;
-}
 
-}
 .recent-orders h2{
     font-size: 24px;
     color: #173C96;
@@ -116,25 +89,6 @@ color: #444;
     width:31%;
 }
 
-@media screen and (max-width:600px){
-    .last-cards{
-        flex-direction: column;
-    }
-    .box{
-        width:100%;
-        margin-bottom: 20px;
-    }
-}
- @media screen and (max-width:900px){
-    .last-cards{
-        flex-wrap: wrap;
-    }
-    .box{
-        width:45%;
-        margin-bottom: 20px;
-    }
-
-} 
 
 .chart {
     background-color: #fff;
@@ -142,9 +96,4 @@ color: #444;
     padding: 20px;
     border-radius: 15px;
 }
-/* @media screen and (max-width:900px){
-    .chart{
-
-}
-} */
 
