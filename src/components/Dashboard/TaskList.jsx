@@ -55,7 +55,7 @@ function TodoList() {
 
       {showForm && (
         <form onSubmit={handleSubmit}>
-          <input
+          <input className="task"
             type="text"
             placeholder="Enter a task"
             value={newTask}

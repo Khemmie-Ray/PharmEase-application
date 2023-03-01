@@ -126,7 +126,7 @@ td, th{
 }
 
 @media screen and (max-width:600px){
-    input[type="text"]{
+    input.search__product[type="text"]{
         width: 40%;
     }
 }

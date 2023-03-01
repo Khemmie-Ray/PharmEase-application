@@ -82,7 +82,7 @@ const ProductList = ({ products = productsData }) => {
         >
           Add New +
         </Button>
-        <input
+        <input className="search__product"
           type="text"
           placeholder="Search "
           value={searchTerm}

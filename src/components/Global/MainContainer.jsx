@@ -13,8 +13,8 @@ import Navbar from "./NavBar";
 import SideBar from "./SideBar";
 import Login from "../Start/Login";
 import SignUp from "../Start/SignUp";
-
-
+import Settings from "../Settings/Settings";
+import Inventory from "../Inventory/Inventory";
 
 const MainContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -132,6 +132,32 @@ const MainContainer = () => {
                 <SideBar isOpen={isOpen} />
                 <div className={`content ${isOpen ? 'shifted' : ''}`}>
                   <Order />
+                </div>
+              </div>
+            </>
+          }
+        /> 
+        <Route path="/inventory"
+          element={
+            <>
+              <Navbar toggle={toggle} />
+              <div className="wrapper">
+                <SideBar isOpen={isOpen} />
+                <div className={`content ${isOpen ? 'shifted' : ''}`}>
+                  <Inventory />
+                </div>
+              </div>
+            </>
+          }
+        /> 
+                <Route path="/settings"
+          element={
+            <>
+              <Navbar toggle={toggle} />
+              <div className="wrapper">
+                <SideBar isOpen={isOpen} />
+                <div className={`content ${isOpen ? 'shifted' : ''}`}>
+                  <Settings />
                 </div>
               </div>
             </>
