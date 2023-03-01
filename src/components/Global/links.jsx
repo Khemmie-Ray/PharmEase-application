@@ -4,7 +4,7 @@ import { BiGroup } from "react-icons/bi";
 import { GiMedicines } from "react-icons/gi";
 import { BsStack, BsGearFill } from "react-icons/bs";
 import { MdOutlineInventory } from "react-icons/md";
-
+import { FaRobot } from "react-icons/fa";
 
 
 export const links = [
@@ -47,6 +47,10 @@ export const links = [
       {
         name: "inventory",
         icon: <MdOutlineInventory />,
+      },
+      {
+        name: "chatbot",
+        icon: <FaRobot />,
       },
       {
         name: "settings",
