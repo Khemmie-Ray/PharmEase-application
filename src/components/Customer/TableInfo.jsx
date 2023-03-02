@@ -1,9 +1,8 @@
 import React, { useState, useRef } from 'react';
 import customerdata from './customerdata';
 import './tableInfo.css'
-import { Table, Button, Dropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import { BiAddToQueue } from "react-icons/bi"
-import Pagination from '../Global/Pagination';
 
 const TableInfo = () => {
   const [dataInfo, setDataInfo] = useState(customerdata);
@@ -90,6 +89,7 @@ const TableInfo = () => {
                       name="name"
                       value={newData.name}
                       onChange={handleInputChange}
+                      required
                     />
                   </td>
                   <td>
@@ -98,6 +98,7 @@ const TableInfo = () => {
                       name="email"
                       value={newData.email}
                       onChange={handleInputChange}
+                      required
                     />
                   </td>
                     <td>
@@ -106,6 +107,7 @@ const TableInfo = () => {
                       name="phone"
                       value={newData.phone}
                       onChange={handleInputChange}
+                      required
                     />
                   </td>
                     <td>
@@ -114,6 +116,7 @@ const TableInfo = () => {
                       name="address"
                       value={newData.address}
                       onChange={handleInputChange}
+                      required
                     />
                   </td>
                     <td>
@@ -122,6 +125,7 @@ const TableInfo = () => {
                       name="city"
                       value={newData.city}
                       onChange={handleInputChange}
+                      required
                     />
                   </td>
                     <td>
@@ -130,6 +134,7 @@ const TableInfo = () => {
                       name="state"
                       value={newData.state}
                       onChange={handleInputChange}
+                      required
                     />
                   </td>
                   <td>
@@ -181,6 +186,7 @@ const TableInfo = () => {
           placeholder='Name'
           value={newData.name}
           onChange={handleInputChange}
+          required
         />
         <input
           type="text"
@@ -188,6 +194,7 @@ const TableInfo = () => {
           placeholder='Email'
           value={newData.email}
           onChange={handleInputChange}
+          required
         />
          <input
           type="text"
@@ -195,6 +202,7 @@ const TableInfo = () => {
           placeholder='Phone'
           value={newData.phone}
           onChange={handleInputChange}
+          required
         />
         <input
           type="text"
@@ -202,6 +210,7 @@ const TableInfo = () => {
           placeholder='Address'
           value={newData.address}
           onChange={handleInputChange}
+          required
         />
          <input
           type="text"
@@ -209,6 +218,7 @@ const TableInfo = () => {
           placeholder='City'
           value={newData.city}
           onChange={handleInputChange}
+          required
         />
         <input
           type="text"
@@ -216,17 +226,11 @@ const TableInfo = () => {
           placeholder='State'
           value={newData.state}
           onChange={handleInputChange}
+          required
         />
         <button onClick={handleAdd} className="addNew">Add</button>
       </div>)}
-      {/* <Pagination
-        productsPerPage={productsPerPage}
-        totalProducts={filteredProducts.length}
-        paginate={paginate}
-        currentPage={currentPage}
-      /> */}
-    </div>
-    
+    </div>    
   );
 };
 
