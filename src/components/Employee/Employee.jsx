@@ -5,19 +5,8 @@ import Card from "./Card"
 
 const Employee = () => {
   const [currentImage, setcurrentImage] = useState('')
-  // const [employeeInfo, setEmployeeInfo] = useState(employeedata)
-  // console.log(employeeInfo)
-
-  // const handleEmployeeAdd = () => {
-  //   setEmployeeInfo((prevData) => [
-  //     ...prevData,
-  //     { id: prevData.length + 1, ...newData },
-  //   ]);
-  //   setNewData({ imageUrl: '',firstname: '',lastname: '',role: '', email: '', phone: '',  mobile: '', fax: '' });
-  // };
 
     const profile = employeedata.map(info => <Card key={info.id} info={info} handleCurrentImage={handleCurrentImage}/> )
-    console.log(currentImage)
 
     function handleCurrentImage(img) {
       setcurrentImage(prev => img) 
@@ -61,7 +50,7 @@ const Employee = () => {
               <p>Phone</p>
               </div>
             <div className="infoTag">
-              <p>{currentImage.email}</p>
+              <p className="staffMail">{currentImage.email}</p>
               <p>{currentImage.phone}</p>
             </div>   
             </div>

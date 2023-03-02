@@ -35,13 +35,12 @@
     margin: 1em auto 2em;
 }
 
-/* 
 .newClients input {
     display: block;
     padding: .5em;
     width: 100%;
     margin-bottom: .5em;
-} */
+}
 
 li {
     list-style: none;
@@ -52,18 +51,25 @@ a {
 }
 
 .newClients {
-    width: 25%;
+    width: 30%;
     padding: 1em;
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #E3E4E7;
 }
 
+.newData input {
+    width: 70%;
+    padding: 0 .5em;
+    height: 45px;
+}
+
 .newClients, .addNew,
 .newData input, .save,
-.save-btn, .sub-sales p {
+.save-btn, .sub-sales p,
+.footerTwo button {
     border-radius: 5px;
 }
 
@@ -84,11 +90,6 @@ button {
 
 .save-btn {
     padding: .3em .6em;
-}
-
-.posTable input {
-    padding: .1em;
-    border: 1px solid gray;
 }
 
 .addNew:hover,
@@ -131,7 +132,7 @@ button {
 }
 
 .sub-sales p:first-child,
-.footerTwo button:first-child {
+.footerTwo button:nth-child(2) {
     background-color: #65BC50;
     color: white;
 }
@@ -142,14 +143,25 @@ button {
     color: white;
 }
 
+.footerTwo button:first-child {
+    background-color: #E3C213;
+}
+
+.footerTwo button {
+    color: white;
+    border: none;
+    padding: .5em;
+}
+
 .addBtn {
     padding: 0 .5em;
     border: 0;
 }
 
 .sales {
-    overflow-y: auto;
-    padding: 0 .5em;
+    overflow-y: scroll;
+    padding: .5em 0;
+    height: 40vh;
 }
 
 .card {
@@ -161,6 +173,40 @@ button {
 .sales-card img {
     width: 100%;
     height: 90px;
+}
+
+.receipt-modal,
+.bank-modal {
+    position: absolute;
+    top: 30%;
+    background-color: white;
+    border: 1px solid gray;
+    width: 30%;
+    height: 300px;
+    padding: 1em;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+.setClose {
+    position: absolute;
+    right: 15px;
+}
+
+.success-pop button {
+    margin: .5em;
+}
+
+.success-pop {
+    text-align: center;
+}
+
+.receipt-modal input,
+.bank-modal input {
+    width: 100%;
+    padding: .5em;
+    margin: .7em 0 2em;
 }
 
 .card, .sales-card {
@@ -193,8 +239,7 @@ button {
 
 .mini-card input {
     width: 40%;
-    margin-left: 1em;
-    border: 1px solid gray;
+    padding: 0 .5em;
 }
 
 #footertab {
@@ -210,10 +255,9 @@ button {
     color: white;
 }
 
-
 .footerOne input {
     width: 30%;
-    border: 1px solid gray;
+    padding: 0 .5em;
 }
 
 .card img {
@@ -244,10 +288,21 @@ button {
     width: 25%;
 }
 
+.inputOne input, .inputTwo input {
+    padding: .5em;
+}
 
 .inputTwo {
     width: 18%;
-    /* background-color: red; */
+}
+
+.inputTwo button {
+    width: 20%;
+    padding: .6em .5em;
+}
+
+.inputTwo input {
+    width: 80%;
 }
 
 .banner {
@@ -310,4 +365,80 @@ button {
     margin-top: 2em;
 }
 
+.posTable input {
+    padding: .3em;
+    width: 50px;
+    border: 1px solid gray;
+}
 
+@media (max-width: 600px) {
+    .overview-cards, .mid-cards,
+    .last-cards, .newData,
+    .topInput, .card-sales,
+    #footertab, .footerOne,
+    .footerTwo, .card-content,
+    .profileBtn, .banner {
+        flex-direction: column;
+    }
+
+    .sub-sales, .inputOne,
+    .inputTwo  {
+        flex-wrap: wrap;
+    }
+
+    .inputTwo input,
+    .receipt-modal, .bank-modal,
+    .success-pop, .newClients {
+        width: 80%;
+    }
+
+    .newClients {
+        top: 70%;
+    }
+
+   .sales-card, .inputOne input,
+   .inputOne select {
+    width: 45%;
+   }
+
+    .overview-card, .graph,
+    .orders, .navbar__wrapper,
+    .box,  .wrapper, .inputOne,
+    .mini-card, .salesTab, 
+    .sales-container, .sales,
+    .inputTwo, .footerOne,
+    .footerTwo, .card, 
+    .profileBtn, .userBtn,
+    .banner-img, .employeeName {
+        width: 100%;
+    }
+
+    .staffMail {
+        overflow-x: auto;
+    }
+
+    .banner-img img {
+        object-position: top;
+    }
+
+    .clients, .posTable {
+        overflow-x: auto;
+        display: block;
+    }
+
+    .salesTab {
+        margin-top: 1em;
+    }
+
+    .box, .graph, .orders,
+    .inputOne input, 
+    .inputOne select, 
+    .footerTwo button,
+    .footerOne input{
+        margin-bottom: 1em;
+    }
+
+    .graph {
+        height: 35vh;
+    }
+}
