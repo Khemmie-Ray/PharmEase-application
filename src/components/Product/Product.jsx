@@ -1,8 +1,8 @@
 import { Tabs, Tab} from 'react-bootstrap';
 import ProductList from './ProductList';
 import CategoryTable from './CategoryTable';
-import ExpiredProducts from '../Inventory/ExpiredProducts';
-import OutOfStock from '../Inventory/OutOfStock';
+// import ExpiredProducts from '../Inventory/ExpiredProducts';
+// import OutOfStock from '../Inventory/OutOfStock';
 import TitleBar from '../Global/TitleBar';
 import "./ProductList.css";
 
@@ -19,12 +19,12 @@ function Product() {
         <Tab eventKey="categories" title="Category">
           <CategoryTable />
         </Tab>
-        <Tab eventKey="out of stock" title="Out of Stock">
+        {/* <Tab eventKey="out of stock" title="Out of Stock">
           <OutOfStock />
         </Tab>
         <Tab eventKey="exipired" title="Expired Products">
           <ExpiredProducts/>
-        </Tab>
+        </Tab> */}
       </Tabs>
     </div>
     </div>
