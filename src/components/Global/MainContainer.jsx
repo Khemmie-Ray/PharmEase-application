@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
 import './NavBar.css';
-import '../Customer/tableInfo';
+import '../Customer/tableInfo.css';
 import Product from "../Product/Product";
 import Stock from "../Stock/Stock";
 import Customer from "../Customer/Customer";

@@ -7,7 +7,7 @@ PharmaEase application is a solution that helps pharmacies in Nigeria and West A
 - React (Hooks, Routers, Icons)
 - Bootstrap
 - CSS
-- Faker.js
+- Fakers.js
 - ChatBot
 
 ## Screenshots
