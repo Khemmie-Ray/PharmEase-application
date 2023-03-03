@@ -1,4 +1,4 @@
-import { FaThList, FaIdCard } from "react-icons/fa";
+import { FaThList, FaIdCard, FaRobot } from "react-icons/fa";
 import { HiUserGroup, HiShoppingCart } from "react-icons/hi";
 import { BiGroup } from "react-icons/bi";
 import { GiMedicines } from "react-icons/gi";
@@ -42,6 +42,9 @@ const TitleBar = ({ icon, title }) => {
       break;
     case "MdOutlineInventory":
       iconElement = <MdOutlineInventory />;
+      break;
+    case "FaRobot":
+      iconElement = <FaRobot />;
       break;
     case "IoPersonCircleSharp":
       iconElement = <IoPersonCircleSharp />;
