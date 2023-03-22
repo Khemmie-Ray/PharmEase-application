@@ -1,12 +1,15 @@
 import  { useState } from 'react';
 import './NavBar.css'
+import logo from '../../assets/logo2.png';
 import { FaBars, FaBell, FaUser, FaAngleDown, FaSignOutAlt, FaUserEdit } from 'react-icons/fa';
 import {IoPersonCircleSharp} from 'react-icons/io5';
+import { Link } from 'react-router-dom';
+
+
 
 
 
 const Navbar = ({toggle}) => {
-  // const [sidebarOpen, setSidebarOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // const toggleSidebar = () => {
@@ -19,11 +22,11 @@ const Navbar = ({toggle}) => {
 
   return (
 
-    <nav className="navbar">
+    <nav className="navbar__wrapper">
         
     <div className="navbar__container">
         <div className="navbar__left">
-          {/* <RiDashboardLine className="navbar__icon" /> */}
+        <Link to ="/dashboard" className='logo'><img src= {logo} alt="logo" /></Link>          
           <h1 className="navbar__title">PharmEase</h1>
         </div>
         <div className="navbar__right">
@@ -66,9 +69,9 @@ const Navbar = ({toggle}) => {
               </li>
               <li className="navbar-dropdown-item">
                 <FaSignOutAlt className="navbar__dropdown-icon" />
-                <a href="#" className="navbar-dropdown-link">
+                <Link to="/" className="navbar-dropdown-link">
                   Log Out
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
