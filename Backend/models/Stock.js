@@ -1,27 +1,23 @@
 const Sequelize = require('sequelize')
 const { sequelize } = require('../config/connection.js')
 
-// product table
-const Product = sequelize.define('product',{
-    ProductId:{
+// Stock table
+const Stock = sequelize.define('stock',{
+    StockId:{
         type:Sequelize.UUID,
         defaultValue:Sequelize.UUIDV4,
         allowNull: false,
         primaryKey: true
     },
-    Product_image:{
-        type: Sequelize.STRING,
-        allowNull: false
-    },
     Product_Name:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    Expering_date:{
-        type: Sequelize.STRING,
-        allowNull: false
+    supplierId:{
+        type:Sequelize.UUID,
+        defaultValue:Sequelize.UUIDV4,
     },
-    Quantity:{
+    Sale_Price:{
         type: Sequelize.INTEGER,
         allowNull: false
     },
@@ -29,27 +25,31 @@ const Product = sequelize.define('product',{
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    Sales_price:{
+    Price_per_unit:{
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    supllierName:{
-        type:Sequelize.UUID,
-        defaultValue:Sequelize.UUIDV4,
-    },
-    CategoryId:{
-        type:Sequelize.UUID,
-        defaultValue:Sequelize.UUIDV4,
-    },
-    batch_Id:{
+    In_Qty:{
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    
+    Out_Qty:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    Stock_saleprice:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    Stock_purchaseprice:{
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+
 
 });
 
 
 
 
-module.exports = {Product}
+module.exports = {Stock}
